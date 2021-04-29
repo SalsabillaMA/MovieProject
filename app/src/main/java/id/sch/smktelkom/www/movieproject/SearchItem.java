@@ -1,10 +1,17 @@
 package id.sch.smktelkom.www.movieproject;
 
+import com.google.gson.annotations.SerializedName;
+
 public class SearchItem{
+	@SerializedName("Type")
 	private String type;
+	@SerializedName("Year")
 	private String year;
+	@SerializedName("imdbID")
 	private String imdbID;
+	@SerializedName("Poster")
 	private String poster;
+	@SerializedName("Title")
 	private String title;
 
 	public void setType(String type){
