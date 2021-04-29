@@ -17,7 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
-    public ArrayList<SearchItem> listMo = new ArrayList<>();
+    public ArrayList<SearchItem> listMovie = new ArrayList<>();
 
     @NonNull
     @Override
@@ -29,12 +29,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-        holder.bind(listMo.get(position));
+        holder.bind(listMovie.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return listMo.size();
+        return listMovie.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

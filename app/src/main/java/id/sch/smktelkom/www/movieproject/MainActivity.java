@@ -17,7 +17,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.listPo)
-    RecyclerView lisMo;
+    RecyclerView listMovie;
     MovieAdapter adapter;
 
     @Override
@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         adapter = new MovieAdapter();
-        lisMo.setLayoutManager(new LinearLayoutManager(this));
-        lisMo.setAdapter(adapter);
-        lisMo.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        listMovie.setLayoutManager(new LinearLayoutManager(this));
+        listMovie.setAdapter(adapter);
+        listMovie.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         RestClient.getService().getMo().enqueue(new Callback<MovieResponse>() {
 
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
-                adapter.listMo.addAll(response.body().getSearch());
+                adapter.listMovie.addAll(response.body().getSearch());
                 adapter.notifyDataSetChanged();
             }
 
